@@ -39,3 +39,16 @@ Choose **Grand Prix** for three consecutive races with points (10–8–6–4–
 ## Browser checks
 
 With the Vite development server running, `npm run test:browser` exercises keyboard input, drift release, items, tournament progression and mobile layout. With a production build served on port 4173, `npm run test:offline` checks offline reload. These use system Chromium (`/usr/bin/chromium`); set `CHROMIUM_PATH` for another installation. Simulation advances deterministically in the smoke test; it is not a frame-rate benchmark. PWA installation requires HTTPS or localhost.
+
+## GitHub Pages deployment
+
+Pushes to `main` run `.github/workflows/pages.yml`: install locked dependencies, test, build, and deploy `dist` to GitHub Pages. You can also run the workflow manually from Actions.
+
+One-time repository/domain setup:
+
+1. In **Settings → Pages**, select **GitHub Actions** as the build source.
+2. Set the custom domain to **drift.zen.dev.br** in the same settings page. `public/CNAME` also preserves the domain in the build output; it does not configure Pages settings for an Actions deployment.
+3. Add a DNS **CNAME** record for `drift.zen.dev.br` pointing to **eulercb.github.io** (without a path).
+4. After GitHub verifies DNS and provisions the certificate, enable **Enforce HTTPS** so installation and service workers work.
+
+The app uses root-relative asset and service worker URLs, appropriate for the custom domain. Access it at **https://drift.zen.dev.br/** once deployment and DNS setup complete.

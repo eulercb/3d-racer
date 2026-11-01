@@ -45,7 +45,8 @@ self.addEventListener('fetch', (event) => {
 
   event.respondWith((async () => {
     const cache = await caches.open(CACHE_NAME);
-    const cached = await cache.match(request);
+    // Public app assets do not vary by Origin, even when the dev preview sends Vary.
+    const cached = await cache.match(request, { ignoreVary: true });
     if (cached) return cached;
 
     try {

@@ -1,0 +1,20 @@
+{
+  "id": "/",
+  "name": "APEX DRIFT",
+  "short_name": "APEX DRIFT",
+  "description": "An arcade browser racing tournament. Race, drift, boost, and take the win.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "landscape",
+  "background_color": "#070b12",
+  "theme_color": "#070b12",
+  "icons": [
+    {
+      "src": "/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "name": "apex-drift",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite --host 0.0.0.0",
+    "build": "vite build",
+    "preview": "vite preview --host 0.0.0.0",
+    "test": "node --test",
+    "test:browser": "node scripts/smoke.mjs",
+    "test:offline": "node scripts/offline.mjs"
+  },
+  "dependencies": {
+    "three": "^0.180.0"
+  },
+  "devDependencies": {
+    "vite": "^7.1.0",
+    "@playwright/test": "^1.56.0"
+  }
+}
